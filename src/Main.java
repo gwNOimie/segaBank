@@ -26,15 +26,19 @@ public class Main {
             // TODO: init empty array
         }
         // TODO: ask account code
+        this.askAccountCode();
         // TODO: if account is correct, prompt menu depending on type (+contain leave entry)
         // TODO: act from choice
     }
 
     private void askAccountCode() {
-        System.out.println("Do you want to load last backup ? (type yes or no)");
+        System.out.println("Please enter your account code and press enter");
         this.accountCode = new Integer(sc.nextInt());
         if (accounts.containsKey(this.accountCode)) {
             this.currentAccount = accounts.get(this.accountCode);
+            this.promptMenu();
+        } else {
+            System.out.println("Wrong code. Please enter your account code and press enter");
         }
     }
 }
