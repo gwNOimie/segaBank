@@ -87,6 +87,9 @@ public class Main {
                 accountType = -1;
             }
             switch (accountType) {
+                case 0:
+                    askAccountCode();
+                    break;
                 case 1:
                     double overdraft = askAmount("overdraft");
                     SimpleAccount newSimpleAccount = new SimpleAccount(overdraft);
