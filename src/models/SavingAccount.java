@@ -3,12 +3,13 @@ package models;
 public class SavingAccount extends Account {
     private double interest;
 
-    SavingAccount(double interest) {
+    public SavingAccount(double interest) {
         super();
         this.interest = interest;
+        this.type = "saving";
     }
 
-    double calculateInterest() {
+    public double calculateInterest() {
         this.sold += this.sold * this.interest;
         return this.sold;
     }

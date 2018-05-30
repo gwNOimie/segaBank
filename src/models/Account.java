@@ -2,11 +2,15 @@ package models;
 
 import store.StoreService;
 
-public abstract class Account {
+import java.io.Serializable;
+
+public abstract class Account implements Serializable {
+    public String type;
     protected int code;
     protected double sold;
 
     Account() {
+        StoreService.lastCode++;
         this.code = StoreService.lastCode;
         this.sold = 0;
     }
@@ -22,6 +26,10 @@ public abstract class Account {
     }
 
     public String toString() {
-        return String.valueOf(this.code).concat(" : ").concat(String.valueOf(this.sold));
+        return "Code : ".concat(String.valueOf(this.code)).concat(" / Sold : ").concat(String.valueOf(this.sold));
+    }
+
+    public int getCode() {
+        return this.code;
     }
 }

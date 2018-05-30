@@ -1,10 +1,11 @@
 package models;
 
 public class SimpleAccount extends Account {
-    private int overdraft;
-    SimpleAccount(int overdraft) {
+    private double overdraft;
+    public SimpleAccount(double overdraft) {
         super();
         this.overdraft = overdraft;
+        this.type = "simple";
     }
 
     @Override
